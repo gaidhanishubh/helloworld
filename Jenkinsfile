@@ -19,7 +19,7 @@ pipeline {
         }
         stage("Deploy to TOMcat"){
             steps{
-                ansiblePlaybook(playbook: '/ansible/deployon_local.yml, inventory: '/ansible/hosts', extras: "-e work_space=${WORKSPACE}")
+                ansiblePlaybook(credentialsId: 'ssh_self_110', playbook: '/ansible/deployon_local.yml, inventory: '/ansible/hosts', extras: "-e work_space=${WORKSPACE}")
             }
         }
     }
