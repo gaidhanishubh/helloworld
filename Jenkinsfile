@@ -1,11 +1,8 @@
 pipeline {
     agent any
-    tools{
-        maven 'maven_3.8.8'
-        jdk 'java_17'
-        git 'Default'
-    }
     environment{
+        PATH = "/opt/maven/bin:$PATH"
+        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
         WORKSPACE = "${env.WORKSPACE}"
         BRANCH = "${env.BRANCH_NAME}"
     }
