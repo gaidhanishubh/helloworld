@@ -3,7 +3,7 @@ pipeline {
     environment{
         PATH = "/opt/maven/bin:$PATH"
         JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
-        WORKSPACE = "${env.WORKSPACE}"
+        WORKSPACE = "/root/.jenkins/workspace/Multibranch-PL1_master"
         BRANCH = "${env.BRANCH_NAME}"
     }
     stages {
