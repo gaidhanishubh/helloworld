@@ -6,6 +6,16 @@ pipeline {
         WORKSPACE = "${env.WORKSPACE}"
         BRANCH = "${env.BRANCH_NAME}"
     }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '5'))
+        disableConcurrentBuilds()
+        timestamps()
+        skipDefaultCheckout()
+        disableResume()
+    }
+    triggers {
+    pollSCM('H/2 * * * *')
+    }
     stages {
         stage("check out") {
             steps{
