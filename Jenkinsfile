@@ -14,7 +14,7 @@ pipeline {
         disableResume()
     }
     triggers {
-    pollSCM('H/2 * * * *')
+        "GitHub hook trigger for GITScm polling"
     }
     stages {
         stage("check out") {
